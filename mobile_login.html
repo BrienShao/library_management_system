@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>移动端登录页面</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-section {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .design-note {
+            flex: 1;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-left: 1px solid #e2e6ea;
+            border-radius: 0 15px 15px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo img {
+            width: 120px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #343a40;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .extra-actions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        .extra-actions a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .extra-actions a:hover {
+            color: #764ba2;
+        }
+
+        .design-note h2 {
+            margin-top: 0;
+            color: #343a40;
+        }
+
+        .design-note p {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .design-note {
+                border-left: none;
+                border-top: 1px solid #e2e6ea;
+                border-radius: 0 0 15px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-section">
+            <div class="logo">
+                <img src="./src/static/图书馆.svg" alt="Logo">
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="username">账号</label>
+                    <input type="text" id="username" placeholder="请输入账号">
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" placeholder="请输入密码">
+                </div>
+                <button type="submit">登录</button>
+                <div class="extra-actions">
+                    <a href="#">忘记密码</a>
+                    <a href="#">注册账号</a>
+                </div>
+            </form>
+        </div>
+        <div class="design-note">
+            <h2>设计说明</h2>
+            <p>1. **整体布局**：采用两栏布局，左侧为登录表单，右侧为设计说明，方便用户在操作时查看设计思路。在小屏幕设备上，自动切换为上下布局。</p>
+            <p>2. **颜色搭配**：使用渐变色背景和按钮，增强页面视觉冲击力，主色调为蓝色和紫色，给人专业、时尚的感觉。</p>
+            <p>3. **交互设计**：输入框聚焦时有蓝色边框和阴影提示，按钮悬停时会有上移动画，链接悬停时颜色变化，提升用户交互体验。</p>
+            <p>4. **响应式设计**：通过 `meta` 标签设置视口，确保在移动端设备上能完美显示，同时添加媒体查询，适配小屏幕设备。</p>
+        </div>
+    </div>
+</body>
+</html>
